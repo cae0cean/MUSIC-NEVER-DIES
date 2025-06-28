@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Favorite Singer...</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffdde1, #c5ddee); /* pink soft ke biru soft */
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 2.5em;
+    }
+
+    .checkbox-list {
+      display: inline-block;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .checkbox-list label {
+      display: block;
+      margin: 10px 0;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 1.5em;
+      color: #e91e63; /* pink cerah */
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Favorite Singer...</h1>
+
+  <div class="checkbox-list">
+    <label><input type="checkbox" onclick="showMessage(this)"> LANY</label>
+    <label><input type="checkbox" onclick="showMessage(this)"> Taylor Swift</label>
+    <label><input type="checkbox" onclick="showMessage(this)"> Niki Zefanya</label>
+    <label><input type="checkbox" onclick="showMessage(this)"> Frank Ocean</label>
+    <label><input type="checkbox" onclick="showMessage(this)"> The Smith</label>
+    <label><input type="checkbox" onclick="showMessage(this)"> Ariana Grande</label>
+    <label><input type="checkbox" onclick="showMessage(this)"> Lana Del Rey</label>
+    <label><input type="checkbox" onclick="showMessage(this)"> Charlie Puth</label>
+  </div>
+
+  <div id="message">Listen to whatever makes you happy to survive the day</div>
+
+  <script>
+    function showMessage(checkbox) {
+      // Uncheck all other checkboxes
+      let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(cb => {
+        if (cb !== checkbox) cb.checked = false;
+      });
+
+      // Tampilkan pesan hanya jika ada yang dipilih
+      let message = document.getElementById("message");
+      if (checkbox.checked) {
+        message.style.display = "block";
+      } else {
+        message.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
